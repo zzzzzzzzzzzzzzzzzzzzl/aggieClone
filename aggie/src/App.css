@@ -1,0 +1,159 @@
+body {
+  color: white;
+  background-color: rgb(50, 50, 50);
+  cursor: crosshair;
+}
+
+.App {
+  position: relative;
+  /* Establishes a positioning context */
+  width: 100vw;
+  /* Example width */
+  height: 400px;
+  /* Example height */
+}
+
+
+canvas {
+  position: relative;
+  image-rendering: pixelated;
+  outline: none;
+}
+
+#canvasContainer {
+  position: relative;
+}
+
+#canvas1 {
+  top: 300px;
+  right: 200px;
+  /* Position canvas1 */
+  z-index: 2;
+  /* Higher z-index to ensure it's on top */
+}
+
+#canvas2 {
+  top: 0;
+  /* Position canvas2 */
+  z-index: 1;
+  /* Lower z-index so it stays behind canvas1 */
+}
+
+
+
+
+#custom-cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid red;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+
+#colourSelectorCursor {
+  transform: translate(-50%, -50%);
+
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid black;
+  /* Inner border */
+  outline: 2px solid white;
+  /* Outer border */
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+#colourSelectorCanvas {
+  /* margin: 2px; */
+  outline: white solid 2px;
+  border: rgb(0, 0, 0) solid 1px;
+
+}
+
+.sampleColor {
+  width: 130px;
+  height: 50px;
+  display: inline-block;
+  /* left: 10px; */
+  position: relative;
+  z-index: 1;
+  /* margin: 4px; */
+  outline: rgb(255, 255, 255) 2px solid;
+}
+
+
+.colourSelector {
+  outline: rgb(255, 255, 255) solid 2px;
+  position: absolute;
+  /* Position relative to the parent */
+  top: 0;
+  height: 100%;
+  /* Align to the top */
+  right: 0;
+  /* background-color: rgb(34, 34, 34); */
+  /* Optional background color */
+  /* Optional border */
+}
+
+
+/* The slider itself */
+#hueSliderParent {
+  margin-left: 1px;
+  outline: white solid 2px;
+}
+
+#hueSlider {
+  transform: translate(-3px, -1px);
+
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  appearance: none;
+  width: 101%;
+  /* position: relative; */
+  /* Full-width */
+  height: 20px;
+  /* Specified height */
+  background: #d3d3d300;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 1;
+  /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s;
+  /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+#hueSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 8px;
+  /* Set a specific slider handle width */
+  height: 16px;
+  /* Slider handle height */
+  /* background: #5e5e5e; */
+  border-radius: 20px;
+  outline: black solid;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+#hueSlider::-moz-range-thumb {
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  /* background: #04AA6D; */
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
